@@ -9,7 +9,8 @@ import { UserModule } from './user/user.module';
   imports: [
     GraphQLModule.forRoot({
       autoSchemaFile: true,
-      include: [UserModule],
+      debug: true,
+      playground: true,
     }),
     UserModule,
   ],
