@@ -1,12 +1,24 @@
-import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  Args,
+  Mutation,
+  ResolveProperty,
+  Parent,
+} from '@nestjs/graphql';
 
 import { Bet } from './bet.model';
 import { BetService } from './bet.service';
 import { NewBetInput } from './bet.dto';
+import { UserService } from '../user/user.service';
+import { User } from '../user/user.model';
 
 @Resolver(of => Bet)
 export class BetResolver {
-  constructor(private readonly betService: BetService) {}
+  constructor(
+    private readonly betService: BetService,
+    private readonly userService: UserService,
+  ) {}
 
   @Query(returns => [Bet])
   async bets() {
@@ -23,9 +35,8 @@ export class BetResolver {
     return this.betService.create(bet);
   }
 
-  // @ResolveProperty()
-  // async posts(@Parent() author) {
-  //   const { id } = author;
-  //   return this.postsService.findAll({ authorId: id });
-  // }
+  @ResolveProperty(returns => User)
+  async author(@Parent() bet: Bet) {
+    return this.userService.findOne(bet.authorId);
+  }
 }
