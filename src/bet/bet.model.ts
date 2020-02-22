@@ -14,11 +14,11 @@ export class Bet {
 
   @Field(type => String)
   @Column()
-  author: string;
+  authorId: string;
 
   @Field(type => String)
   @Column()
-  challenge: string;
+  challengeId: string;
 
   @Field(type => Boolean)
   @Column()

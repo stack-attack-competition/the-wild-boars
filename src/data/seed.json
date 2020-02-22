@@ -50,7 +50,7 @@
     {
       "isDeleted": false,
       "id": "f98bc381-0fa4-571d-a2e0-51143777cad3",
-      "author": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
+      "authorId": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
       "title": "Bof vaz vupgad rebuzki urig icurume",
       "description": "Ih wa aduivekig sitabak besebes hococwof kehrineh fovesohi kunhe tanimiwi vifos hejlub vusituse hol se. Mosoud hizecoj gecuwle mom ilunafe ivodobic pebkuhpih loibolo oc dousane por cukos upuej vug. Agauf kukelhi pa ad zun ve vi ho oweobucu upepil zudfas pijurebu gebanew waplevtu ha vu li agcecku.",
       "isActive": true,
@@ -59,7 +59,7 @@
     {
       "isDeleted": false,
       "id": "c60dfb1f-31f2-5002-9f0e-eeaced0b1aa0",
-      "author": "b543bfb4-d303-54be-a13f-b88636c0119a",
+      "authorId": "b543bfb4-d303-54be-a13f-b88636c0119a",
       "title": "Pu matunet nit zu daali wu vap",
       "description": "Jug cuihubi hecafa fa jesaccom lu zulitci nobu gigsi hu joura gaectog sonugmev valep basdun da. Jero lik zofapma mecmam ogwouva mufizze odaza zogijbel de cootbiw zo dibwi zuf vewruftef et. Lic hipa wivjif mirosopu mudka bahriksu firem bo im vicaluuw ga arazupkuw at ek kajreb sumokup.",
       "isActive": true,
@@ -68,7 +68,7 @@
     {
       "isDeleted": false,
       "id": "ad9a22a5-8110-528c-bd2d-7e35089e7a97",
-      "author": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
+      "authorId": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
       "title": "Riwegli deszugtu cimaw ju",
       "description": "Oblede huhave aselonfa zulake wiuvcoz wat jatve otwij luora poonuzu cinjo vu we ow eslol ge ekowum. Vuna suij tiwaz werepvom wekluvem hi jo lapes se baak irni ronogi. Ej fimluf savurvo vermu cehi setogmo suzre vehusruk degoufi zipkew dakvekub lotkag. Oro nud nibduso zu ubagewu baw wu fidiso udhu pov foznan deidor hov ikusuhtu acipel duogulor weg. Wonzi nu sanzojut josviot ekko ov papviiwe bedzo kinow oh zulohur osuvoul wowah recis avoug ahto otutat dilkut.",
       "isActive": true,
@@ -79,8 +79,8 @@
     {
       "id": "75844911-7833-5f1f-a182-59787ef5d12e",
       "isDeleted": false,
-      "author": "768d3cf8-eaa9-5578-b6c1-7cb9419d1172",
-      "challenge": "ad9a22a5-8110-528c-bd2d-7e35089e7a97",
+      "authorId": "768d3cf8-eaa9-5578-b6c1-7cb9419d1172",
+      "challengeId": "ad9a22a5-8110-528c-bd2d-7e35089e7a97",
       "inFavor": true,
       "amount": 228,
       "result": 999
@@ -88,8 +88,8 @@
     {
       "id": "cc81f687-eca3-584d-a86e-212069191bf9",
       "isDeleted": false,
-      "author": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
-      "challenge": "f98bc381-0fa4-571d-a2e0-51143777cad3",
+      "authorId": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
+      "challengeId": "f98bc381-0fa4-571d-a2e0-51143777cad3",
       "inFavor": false,
       "amount": 9,
       "result": 416
@@ -97,8 +97,8 @@
     {
       "id": "9cb8acce-8707-5941-843a-362bfde76891",
       "isDeleted": false,
-      "author": "943b3f3a-dcd5-5e68-8cd1-89433f779fc8",
-      "challenge": "f98bc381-0fa4-571d-a2e0-51143777cad3",
+      "authorId": "943b3f3a-dcd5-5e68-8cd1-89433f779fc8",
+      "challengeId": "f98bc381-0fa4-571d-a2e0-51143777cad3",
       "inFavor": false,
       "amount": 476,
       "result": 215
@@ -106,8 +106,8 @@
     {
       "id": "ada64d51-775d-5d42-ad6e-1a51194e847d",
       "isDeleted": false,
-      "author": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
-      "challenge": "f98bc381-0fa4-571d-a2e0-51143777cad3",
+      "authorId": "ef1005e8-d5a2-5b10-a750-a9cb9e51076d",
+      "challengeId": "f98bc381-0fa4-571d-a2e0-51143777cad3",
       "inFavor": false,
       "amount": 73,
       "result": -494
@@ -115,24 +115,24 @@
     {
       "id": "ee0b4c13-1f5d-5a24-b1af-9d3062e5709f",
       "isDeleted": false,
-      "author": "943b3f3a-dcd5-5e68-8cd1-89433f779fc8",
-      "challenge": "f98bc381-0fa4-571d-a2e0-51143777cad3",
+      "authorId": "943b3f3a-dcd5-5e68-8cd1-89433f779fc8",
+      "challengeId": "f98bc381-0fa4-571d-a2e0-51143777cad3",
       "inFavor": true,
       "amount": 83
     },
     {
       "id": "a932a06a-33b0-527a-9c9d-791b3fde546b",
       "isDeleted": false,
-      "author": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
-      "challenge": "ad9a22a5-8110-528c-bd2d-7e35089e7a97",
+      "authorId": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
+      "challengeId": "ad9a22a5-8110-528c-bd2d-7e35089e7a97",
       "inFavor": true,
       "amount": 106
     },
     {
       "id": "fe62afc0-0231-592b-8c34-9fdfb12cda8a",
       "isDeleted": false,
-      "author": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
-      "challenge": "f98bc381-0fa4-571d-a2e0-51143777cad3",
+      "authorId": "21afb8be-1100-5f83-94a7-e3c67ac75b62",
+      "challengeId": "f98bc381-0fa4-571d-a2e0-51143777cad3",
       "inFavor": true,
       "amount": 75,
       "result": 865

@@ -3,10 +3,10 @@ import { InputType, Field, Int } from 'type-graphql';
 @InputType()
 export class NewBetInput {
   @Field(type => String)
-  author: string;
+  authorId: string;
 
   @Field(type => String)
-  challenge: string;
+  challengeId: string;
 
   @Field(type => Boolean)
   inFavor: boolean;

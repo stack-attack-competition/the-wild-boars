@@ -14,7 +14,7 @@ export class Challenge {
 
   @Field(type => String)
   @Column()
-  author: string;
+  authorId: string;
 
   @Field(type => String)
   @Column()
