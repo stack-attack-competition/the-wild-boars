@@ -3,9 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user.model';
 import { UserResolver } from './user.resolver';
 import { UserService } from './user.service';
+import { ChallengeModule } from '../challenge/challenge.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User])],
+  imports: [TypeOrmModule.forFeature([User]), ChallengeModule],
   providers: [UserService, UserResolver],
   exports: [UserService],
 })

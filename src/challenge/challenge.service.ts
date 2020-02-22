@@ -20,6 +20,10 @@ export class ChallengeService implements OnApplicationBootstrap {
     return this.challengeRepository.find();
   }
 
+  findAllByAuthorId(authorId: string) {
+    return this.challengeRepository.find({ authorId });
+  }
+
   findOne(id: string) {
     return this.challengeRepository.findOne(id);
   }
