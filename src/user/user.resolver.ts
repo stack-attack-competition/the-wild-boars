@@ -9,14 +9,13 @@ import {
 import { CreateUserDto, UpdateUserDto } from './user.dto';
 import { User } from './user.model';
 import { UserService } from './user.service';
-import { Challenge } from '../challenge/challenge.model';
-import { ChallengeService } from '../challenge/challenge.service';
+// import { Challenge } from '../challenge/challenge.model';
+// import { ChallengeService } from '../challenge/challenge.service';
 
 @Resolver(of => User)
 export class UserResolver {
   constructor(
-    private readonly userService: UserService,
-    private readonly challengeService: ChallengeService,
+    private readonly userService: UserService, // private readonly challengeService: ChallengeService,
   ) {}
 
   @Query(returns => [User])
@@ -42,14 +41,8 @@ export class UserResolver {
     return this.userService.update(id, updateUserDto);
   }
 
-  @ResolveProperty(type => [Challenge])
-  challenges(@Parent() { id: userId }: User): Promise<Challenge[]> {
-    return this.challengeService.findAllByAuthorId(userId);
-  }
-
-  // @ResolveProperty()
-  // async posts(@Parent() author) {
-  //   const { id } = author;
-  //   return this.postsService.findAll({ authorId: id });
+  // @ResolveProperty(type => [Challenge])
+  // challenges(@Parent() { id: userId }: User): Promise<Challenge[]> {
+  //   return this.challengeService.findAllByAuthorId(userId);
   // }
 }
