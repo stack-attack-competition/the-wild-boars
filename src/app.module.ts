@@ -7,9 +7,9 @@ import { UsersModule } from './user/user.module';
 
 @Module({
   imports: [
-    GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql',
-    }),
+    // GraphQLModule.forRoot({
+    //   autoSchemaFile: 'schema.gql',
+    // }),
     UsersModule,
   ],
   controllers: [AppController],
