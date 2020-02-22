@@ -26,19 +26,19 @@ export class ChallengeService {
 
   // Repositiry
 
-  findAll(): Promise<Challenge[]> {
+  findAll() {
     return this.challengeRepository.find();
   }
 
-  findOne(id: string): Promise<Challenge> {
+  findOne(id: string) {
     return this.challengeRepository.findOne(id);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string) {
     await this.challengeRepository.delete(id);
   }
 
-  async create(newUser: Challenge): Promise<Challenge> {
+  async create(newUser: Challenge) {
     return this.challengeRepository.create(newUser);
   }
 }

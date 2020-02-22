@@ -13,6 +13,12 @@ export class UserResolver {
     // return this.userService.getById(id);
   }
 
+  @Query(returns => [User])
+  async users() {
+    return this.userService.findAll();
+    // return this.userService.getAll();
+  }
+
   // @ResolveProperty()
   // async posts(@Parent() author) {
   //   const { id } = author;

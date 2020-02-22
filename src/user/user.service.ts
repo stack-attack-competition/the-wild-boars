@@ -24,19 +24,19 @@ export class UserService {
 
   // Repositiry
 
-  findAll(): Promise<User[]> {
+  findAll() {
     return this.userRepository.find();
   }
 
-  findOne(id: string): Promise<User> {
+  findOne(id: string) {
     return this.userRepository.findOne(id);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string) {
     await this.userRepository.delete(id);
   }
 
-  async create(newUser: User): Promise<User> {
+  async create(newUser: User) {
     return this.userRepository.create(newUser);
   }
 }

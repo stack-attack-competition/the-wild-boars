@@ -12,6 +12,12 @@ export class ChallengeResolver {
     // return this.userService.getById(id);
   }
 
+  @Query(returns => [Challenge])
+  async challenges() {
+    return this.challengeService.findAll();
+    // return this.challengeService.getAll();
+  }
+
   // @ResolveProperty()
   // async posts(@Parent() author) {
   //   const { id } = author;
