@@ -3,12 +3,8 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { User } from './user.model';
-<<<<<<< HEAD
-import { NewUserInput } from './user.dto';
 import { users } from '../data/seed.json';
-=======
-import { NewUserInput as CreateUserDto } from './user.dto';
->>>>>>> user: create user Dto
+import { CreateUserDto } from './user.dto';
 
 @Injectable()
 export class UserService implements OnApplicationBootstrap {

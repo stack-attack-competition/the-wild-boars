@@ -1,7 +1,7 @@
 import { InputType, Field } from 'type-graphql';
 
 @InputType()
-export class NewUserInput {
+export class CreateUserDto {
   @Field(type => String)
   email: string;
 
