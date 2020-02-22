@@ -3,9 +3,7 @@ import { USERS } from './user.data';
 import { User } from './user.model';
 
 @Injectable()
-export class UsersService {
-  constructor() {}
-
+export class UserService {
   async getAll(): Promise<User[]> {
     return USERS;
   }
