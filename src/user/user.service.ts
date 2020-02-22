@@ -4,6 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { USERS } from './user.data';
 import { User } from './user.model';
+import { NewUserInput } from './user.dto';
 
 @Injectable()
 export class UserService implements OnApplicationBootstrap {
@@ -28,7 +29,11 @@ export class UserService implements OnApplicationBootstrap {
     await this.userRepository.delete(id);
   }
 
-  async create(newUser: User) {
-    return this.userRepository.create(newUser);
+  async create(newUserData: NewUserInput) {
+    const newUser: User = {
+      ...newUserData,
+      isDeleted: false,
+    };
+    return this.userRepository.save(newUser);
   }
 }

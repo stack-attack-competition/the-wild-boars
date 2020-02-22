@@ -4,9 +4,9 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @ObjectType()
 @Entity()
 export class User {
-  @Field(type => String)
+  @Field(type => String, { nullable: true })
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id?: string;
 
   @Field(type => Boolean)
   @Column()
@@ -29,5 +29,6 @@ export class User {
   lastName: string;
 
   @Field(type => String)
-  pictureUrl: string;
+  @Column({ nullable: true })
+  pictureUrl?: string;
 }
