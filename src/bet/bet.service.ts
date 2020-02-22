@@ -3,8 +3,8 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { Bet } from './bet.model';
-import { BETS } from './bet.data';
 import { NewBetInput } from './bet.dto';
+import { bets } from '../data/seed.json';
 
 @Injectable()
 export class BetService implements OnApplicationBootstrap {
@@ -14,7 +14,7 @@ export class BetService implements OnApplicationBootstrap {
   ) {}
 
   async onApplicationBootstrap() {
-    this.betRepository.save(BETS);
+    this.betRepository.save(bets);
   }
 
   async findAll() {

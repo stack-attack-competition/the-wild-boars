@@ -2,9 +2,9 @@ import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { USERS } from './user.data';
 import { User } from './user.model';
 import { NewUserInput } from './user.dto';
+import { users } from '../data/seed.json';
 
 @Injectable()
 export class UserService implements OnApplicationBootstrap {
@@ -14,7 +14,7 @@ export class UserService implements OnApplicationBootstrap {
   ) {}
 
   async onApplicationBootstrap() {
-    this.userRepository.save(USERS);
+    this.userRepository.save(users);
   }
 
   async findAll() {

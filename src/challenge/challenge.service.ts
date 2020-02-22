@@ -2,8 +2,8 @@ import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { CHALLENGES } from './challenge.data';
 import { Challenge } from './challenge.model';
+import { challenges } from '../data/seed.json';
 
 @Injectable()
 export class ChallengeService implements OnApplicationBootstrap {
@@ -13,7 +13,7 @@ export class ChallengeService implements OnApplicationBootstrap {
   ) {}
 
   onApplicationBootstrap() {
-    this.challengeRepository.save(CHALLENGES);
+    this.challengeRepository.save(challenges);
   }
 
   findAll() {
