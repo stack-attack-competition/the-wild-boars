@@ -8,9 +8,9 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
-  @Field(type => Boolean)
-  @Column()
-  isDeleted: boolean;
+  @Field(type => Boolean, { nullable: true })
+  @Column({ default: false })
+  isDeleted?: boolean;
 
   @Field(type => String)
   @Column()
@@ -28,7 +28,7 @@ export class User {
   @Column()
   lastName: string;
 
-  @Field(type => String)
+  @Field(type => String, { nullable: true })
   @Column({ nullable: true })
   pictureUrl?: string;
 }

@@ -1,10 +1,9 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-
-import { User } from './user.model';
+import { Repository } from 'typeorm';
 import { users } from '../data/seed.json';
-import { CreateUserDto } from './user.dto';
+import { CreateUserDto, UpdateUserDto } from './user.dto';
+import { User } from './user.model';
 
 @Injectable()
 export class UserService implements OnApplicationBootstrap {
@@ -18,22 +17,26 @@ export class UserService implements OnApplicationBootstrap {
   }
 
   async findAll() {
-    return this.userRepository.find();
+    return await this.userRepository.find();
   }
 
   async findOne(id: string) {
-    return this.userRepository.findOne(id);
+    return await this.userRepository.findOne(id);
   }
 
   async remove(id: string) {
     await this.userRepository.delete(id);
   }
 
-  async create(newUserData: CreateUserDto) {
-    const newUser: User = {
-      ...newUserData,
+  async create(createUserDto: CreateUserDto) {
+    const user: User = {
+      ...createUserDto,
       isDeleted: false,
     };
-    return this.userRepository.save(newUser);
+    return await this.userRepository.save(user);
+  }
+
+  async update(id: string, updateUserDto: UpdateUserDto) {
+    return await this.userRepository.save({ id, ...updateUserDto });
   }
 }
