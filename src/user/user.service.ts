@@ -1,34 +1,26 @@
-import { Injectable } from '@nestjs/common';
-import { USERS } from './user.data';
-import { User } from './user.model';
+import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { deprecate } from 'util';
+
+import { USERS } from './user.data';
+import { User } from './user.model';
 
 @Injectable()
-export class UserService {
+export class UserService implements OnApplicationBootstrap {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
   ) {}
 
-  /** @deprecated */
-  async getAll(): Promise<User[]> {
-    return USERS;
+  async onApplicationBootstrap() {
+    this.userRepository.save(USERS);
   }
 
-  /** @deprecated */
-  async getById(id: string): Promise<User | undefined> {
-    return USERS.then(users => users.find(user => user.id === id));
-  }
-
-  // Repositiry
-
-  findAll() {
+  async findAll() {
     return this.userRepository.find();
   }
 
-  findOne(id: string) {
+  async findOne(id: string) {
     return this.userRepository.findOne(id);
   }
 

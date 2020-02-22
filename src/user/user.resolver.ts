@@ -7,16 +7,14 @@ import { UserService } from './user.service';
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  @Query(returns => User, { nullable: true })
-  async user(@Args({ name: 'id', type: () => String }) id: string) {
-    return this.userService.findOne(id);
-    // return this.userService.getById(id);
-  }
-
   @Query(returns => [User])
   async users() {
     return this.userService.findAll();
-    // return this.userService.getAll();
+  }
+
+  @Query(returns => User, { nullable: true })
+  async user(@Args({ name: 'id', type: () => String }) id: string) {
+    return this.userService.findOne(id);
   }
 
   // @ResolveProperty()

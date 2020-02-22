@@ -1,6 +1,6 @@
 import { User } from './user.model';
 
-export const USERS: Promise<User[]> = Promise.resolve([
+export const USERS: User[] = [
   {
     id: '75bb5e41-ff40-5571-832b-cc9d45760289',
     isDeleted: false,
@@ -421,4 +421,4 @@ export const USERS: Promise<User[]> = Promise.resolve([
     pictureUrl:
       'http://www.gravatar.com/avatar/641649e5fab01f14934252a9947e280a',
   },
-]);
+];
