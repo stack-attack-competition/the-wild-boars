@@ -8,6 +8,7 @@
     "prettier": "pretty-quick",
     "prebuild": "rimraf dist",
     "postinstall": "npm run prestart:prod",
+    "prestart:prod": "rimraf dist && npm run build",
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
