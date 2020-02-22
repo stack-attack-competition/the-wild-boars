@@ -3,6 +3,7 @@ import { USERS } from './user.data';
 import { User } from './user.model';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { deprecate } from 'util';
 
 @Injectable()
 export class UserService {
@@ -11,10 +12,12 @@ export class UserService {
     private readonly userRepository: Repository<User>,
   ) {}
 
+  /** @deprecated */
   async getAll(): Promise<User[]> {
     return USERS;
   }
 
+  /** @deprecated */
   async getById(id: string): Promise<User | undefined> {
     return USERS.then(users => users.find(user => user.id === id));
   }
