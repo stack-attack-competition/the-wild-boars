@@ -10,9 +10,7 @@ export class UsersService {
     return USERS;
   }
 
-  async findOne(firstName: string): Promise<User | undefined> {
-    return USERS.then(users =>
-      users.find(user => user.firstName === firstName),
-    );
+  async getById(id: string): Promise<User | undefined> {
+    return USERS.then(users => users.find(user => user.id === id));
   }
 }
