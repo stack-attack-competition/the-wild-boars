@@ -1,6 +1,8 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver, Mutation } from '@nestjs/graphql';
+
 import { Challenge } from './challenge.model';
 import { ChallengeService } from './challenge.service';
+import { CreateChallengeInput } from './challenge.dto';
 
 @Resolver(of => Challenge)
 export class ChallengeResolver {
@@ -16,9 +18,8 @@ export class ChallengeResolver {
     return this.challengeService.findAll();
   }
 
-  // @ResolveProperty()
-  // async posts(@Parent() author) {
-  //   const { id } = author;
-  //   return this.postsService.findAll({ authorId: id });
-  // }
+  @Mutation(returns => Challenge)
+  async createChallenge(@Args('challenge') challenge: CreateChallengeInput) {
+    return this.challengeService.create(challenge);
+  }
 }

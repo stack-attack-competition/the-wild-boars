@@ -4,6 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { Challenge } from './challenge.model';
 import { challenges } from '../data/seed.json';
+import { CreateChallengeInput } from './challenge.dto';
 
 @Injectable()
 export class ChallengeService implements OnApplicationBootstrap {
@@ -16,7 +17,7 @@ export class ChallengeService implements OnApplicationBootstrap {
     this.challengeRepository.save(challenges);
   }
 
-  findAll() {
+  async findAll() {
     return this.challengeRepository.find();
   }
 
@@ -32,7 +33,7 @@ export class ChallengeService implements OnApplicationBootstrap {
     await this.challengeRepository.delete(id);
   }
 
-  async create(newUser: Challenge) {
-    return this.challengeRepository.create(newUser);
+  async create(challenge: CreateChallengeInput) {
+    return this.challengeRepository.save(challenge);
   }
 }

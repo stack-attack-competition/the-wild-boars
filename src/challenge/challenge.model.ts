@@ -9,8 +9,8 @@ export class Challenge {
   id: string;
 
   @Field(type => Boolean)
-  @Column()
-  isDeleted: boolean;
+  @Column({ default: true })
+  isDeleted?: boolean;
 
   @Field(type => String)
   @Column()
@@ -25,8 +25,8 @@ export class Challenge {
   description: string;
 
   @Field(type => Boolean)
-  @Column()
-  isActive: boolean;
+  @Column({ default: true })
+  isActive?: boolean;
 
   @Field(type => String)
   @Column()
