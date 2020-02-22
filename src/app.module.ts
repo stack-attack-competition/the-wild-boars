@@ -11,6 +11,7 @@ import { UserModule } from './user/user.module';
       autoSchemaFile: true,
       debug: true,
       playground: true,
+      introspection: true,
     }),
     UserModule,
   ],
