@@ -3,8 +3,12 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { User } from './user.model';
+<<<<<<< HEAD
 import { NewUserInput } from './user.dto';
 import { users } from '../data/seed.json';
+=======
+import { NewUserInput as CreateUserDto } from './user.dto';
+>>>>>>> user: create user Dto
 
 @Injectable()
 export class UserService implements OnApplicationBootstrap {
@@ -29,7 +33,7 @@ export class UserService implements OnApplicationBootstrap {
     await this.userRepository.delete(id);
   }
 
-  async create(newUserData: NewUserInput) {
+  async create(newUserData: CreateUserDto) {
     const newUser: User = {
       ...newUserData,
       isDeleted: false,
