@@ -9,13 +9,11 @@ export class ChallengeResolver {
   @Query(returns => Challenge, { nullable: true })
   async challenge(@Args({ name: 'id', type: () => String }) id: string) {
     return this.challengeService.findOne(id);
-    // return this.userService.getById(id);
   }
 
   @Query(returns => [Challenge])
   async challenges() {
     return this.challengeService.findAll();
-    // return this.challengeService.getAll();
   }
 
   // @ResolveProperty()

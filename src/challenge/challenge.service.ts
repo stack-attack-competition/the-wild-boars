@@ -1,30 +1,20 @@
-import { Injectable } from '@nestjs/common';
-import { CHALLENGES } from './challenge.data';
-import { Challenge } from './challenge.model';
+import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { deprecate } from 'util';
+
+import { CHALLENGES } from './challenge.data';
+import { Challenge } from './challenge.model';
 
 @Injectable()
-export class ChallengeService {
+export class ChallengeService implements OnApplicationBootstrap {
   constructor(
     @InjectRepository(Challenge)
     private readonly challengeRepository: Repository<Challenge>,
   ) {}
 
-  /** @deprecated */
-  async getAll(): Promise<Challenge[]> {
-    return CHALLENGES;
+  onApplicationBootstrap() {
+    this.challengeRepository.save(CHALLENGES);
   }
-
-  /** @deprecated */
-  async getById(id: string): Promise<Challenge | undefined> {
-    return CHALLENGES.then(users =>
-      users.find(challenge => challenge.id === id),
-    );
-  }
-
-  // Repositiry
 
   findAll() {
     return this.challengeRepository.find();

@@ -1,6 +1,6 @@
 import { Challenge } from './challenge.model';
 
-export const CHALLENGES: Promise<Challenge[]> = Promise.resolve([
+export const CHALLENGES: Challenge[] = [
   {
     id: '92f423bd-ae3b-5909-853b-fc1b6bcc5e45',
     isDeleted: false,
@@ -1541,4 +1541,4 @@ export const CHALLENGES: Promise<Challenge[]> = Promise.resolve([
     isActive: true,
     endDate: '2115-12-21T19:32:08.869Z',
   },
-]);
+];
