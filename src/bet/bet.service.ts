@@ -21,6 +21,10 @@ export class BetService implements OnApplicationBootstrap {
     return this.betRepository.find();
   }
 
+  async findAllByChallengeId(challengeId: string) {
+    return this.betRepository.find({ challengeId });
+  }
+
   async findOne(id: string) {
     return this.betRepository.findOne(id);
   }
