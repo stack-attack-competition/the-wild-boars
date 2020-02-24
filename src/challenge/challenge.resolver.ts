@@ -12,6 +12,7 @@ import { ChallengeService } from './challenge.service';
 import { CreateChallengeInput } from './challenge.dto';
 import { Bet } from '../bet/bet.model';
 import { BetService } from '../bet/bet.service';
+import { Int } from 'type-graphql';
 
 @Resolver(of => Challenge)
 export class ChallengeResolver {
@@ -38,5 +39,12 @@ export class ChallengeResolver {
   @ResolveProperty(returns => [Bet])
   async bets(@Parent() challenge: Challenge) {
     return this.betService.findAllByChallengeId(challenge.id);
+  }
+
+  @ResolveProperty(returns => Int)
+  async pot(@Parent() challenge: Challenge) {
+    return this.bets(challenge).then(bets =>
+      bets.reduce((sum, { amount }) => (sum += amount), 0),
+    );
   }
 }
