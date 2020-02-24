@@ -1,4 +1,4 @@
-import { Field, ObjectType, Int } from 'type-graphql';
+import { Field, ObjectType, Int, InputType } from 'type-graphql';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
@@ -31,4 +31,19 @@ export class Bet {
   @Field(type => Int, { nullable: true })
   @Column({ nullable: true })
   result?: number;
+}
+
+@InputType()
+export class CreateBetInput {
+  @Field(type => String)
+  authorId: string;
+
+  @Field(type => String)
+  challengeId: string;
+
+  @Field(type => Boolean)
+  inFavor: boolean;
+
+  @Field(type => Int)
+  amount: number;
 }

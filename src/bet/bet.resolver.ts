@@ -1,17 +1,15 @@
 import {
-  Resolver,
-  Query,
   Args,
   Mutation,
-  ResolveProperty,
   Parent,
+  Query,
+  ResolveProperty,
+  Resolver,
 } from '@nestjs/graphql';
-
-import { Bet } from './bet.model';
-import { BetService } from './bet.service';
-import { NewBetInput } from './bet.dto';
-import { UserService } from '../user/user.service';
 import { User } from '../user/user.model';
+import { UserService } from '../user/user.service';
+import { Bet, CreateBetInput } from './bet.model';
+import { BetService } from './bet.service';
 
 @Resolver(of => Bet)
 export class BetResolver {
@@ -31,7 +29,7 @@ export class BetResolver {
   }
 
   @Mutation(returns => Bet)
-  async createBet(@Args('bet') bet: NewBetInput) {
+  async createBet(@Args('bet') bet: CreateBetInput) {
     return this.betService.create(bet);
   }
 

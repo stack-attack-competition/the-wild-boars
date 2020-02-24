@@ -1,18 +1,16 @@
 import {
   Args,
-  Query,
-  Resolver,
   Mutation,
-  ResolveProperty,
   Parent,
+  Query,
+  ResolveProperty,
+  Resolver,
 } from '@nestjs/graphql';
-
-import { Challenge } from './challenge.model';
-import { ChallengeService } from './challenge.service';
-import { CreateChallengeInput } from './challenge.dto';
+import { Int } from 'type-graphql';
 import { Bet } from '../bet/bet.model';
 import { BetService } from '../bet/bet.service';
-import { Int } from 'type-graphql';
+import { Challenge, CreateChallengeInput } from './challenge.model';
+import { ChallengeService } from './challenge.service';
 
 @Resolver(of => Challenge)
 export class ChallengeResolver {

@@ -23,7 +23,7 @@
     "no-string-literal": false,
     "array-type": [true, "array"],
     "no-console": [true, "log", "debug", "info", "time", "timeEnd", "trace"],
-    "max-classes-per-file": [true, 2]
+    "max-classes-per-file": false
   },
   "rulesDirectory": []
 }

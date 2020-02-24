@@ -1,10 +1,8 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-
-import { Challenge } from './challenge.model';
+import { Repository } from 'typeorm';
 import { challenges } from '../data/seed.json';
-import { CreateChallengeInput } from './challenge.dto';
+import { Challenge, CreateChallengeInput } from './challenge.model';
 
 @Injectable()
 export class ChallengeService implements OnApplicationBootstrap {

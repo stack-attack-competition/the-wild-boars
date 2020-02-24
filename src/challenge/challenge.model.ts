@@ -1,4 +1,4 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, InputType } from 'type-graphql';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
@@ -39,4 +39,19 @@ export class Challenge {
   @Field(type => String, { nullable: true })
   @Column({ nullable: true })
   proofUrl?: string;
+}
+
+@InputType()
+export class CreateChallengeInput {
+  @Field(type => String)
+  authorId: string;
+
+  @Field(type => String)
+  title: string;
+
+  @Field(type => String)
+  description: string;
+
+  @Field(type => String)
+  endDate: string;
 }

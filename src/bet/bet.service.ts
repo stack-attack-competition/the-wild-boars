@@ -1,10 +1,8 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-
-import { Bet } from './bet.model';
-import { NewBetInput } from './bet.dto';
+import { Repository } from 'typeorm';
 import { bets } from '../data/seed.json';
+import { Bet, CreateBetInput } from './bet.model';
 
 @Injectable()
 export class BetService implements OnApplicationBootstrap {
@@ -33,7 +31,7 @@ export class BetService implements OnApplicationBootstrap {
     await this.betRepository.delete(id);
   }
 
-  async create(bet: NewBetInput) {
+  async create(bet: CreateBetInput) {
     return this.betRepository.save(bet);
   }
 }
